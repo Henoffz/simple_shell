@@ -1,17 +1,17 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-#include <stdio.h> 
-#include <unistd.h> 
+#include <stdio.h> /* for printf*/
+#include <unistd.h> /* for fork, execve*/
 #include <stdlib.h>
-#include <string.h>
+#include <string.h> /* for strtok*/
 #include <stddef.h>
-#include <errno.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <sys/stat.h>
-#include <signal.h>
-#include <fcntl.h> 
+#include <errno.h> /* for errno and perror */
+#include <sys/types.h> /* for type pid */
+#include <sys/wait.h> /* for wait */
+#include <sys/stat.h> /* for use of stat function */
+#include <signal.h> /* for signal management */
+#include <fcntl.h> /* for open files*/
 
 /************* MACROS **************/
 
@@ -20,7 +20,7 @@
 /************* STRUCTURES **************/
 
 /**
- * struct info- structure for the program's data
+ * struct info- struct for the program's data
  * @program_name: the name of the executable
  * @input_line: pointer to the input read for _getline
  * @command_name: pointer to the first command typed by the user
@@ -43,7 +43,7 @@ typedef struct info
 } data_of_program;
 
 /**
- * struct builtins - structure for the builtins
+ * struct builtins - struct for the builtins
  * @builtin: the name of the builtin
  * @function: the associated function to be called for each builtin
  */
@@ -56,7 +56,7 @@ typedef struct builtins
 
 /************* MAIN FUNCTIONS *************/
 
-2
+
 /*========  shell.c  ========*/
 
 /* Inicialize the struct with the info of the program */
@@ -246,4 +246,4 @@ char *get_alias(data_of_program *data, char *alias);
 int set_alias(char *alias_string, data_of_program *data);
 
 
-#endif 
+#endif /* SHELL_H */ 

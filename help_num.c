@@ -56,7 +56,7 @@ int _atoi(char *s)
 		s++;
 	}
 
-	
+	/*2 - extract the number */
 	while ('0' <= *s && *s <= '9' && *s != '\0')
 	{
 
@@ -67,9 +67,9 @@ int _atoi(char *s)
 }
 
 /**
- * count_characters - count the coincidences of character string.
+ * count_characters - count the coincidences of character in string.
  *
- * @string: pointer to str origin.
+ * @string: pointer to str origen.
  * @character: string with  chars to be counted
  * Return: int of string or 0.
  */
